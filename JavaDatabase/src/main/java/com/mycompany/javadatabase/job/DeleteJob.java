@@ -32,13 +32,13 @@ public class DeleteJob {
             
             if(output.next()){
                System.out.println(output.getString("dept_id")+"  "+output.getString("job_title")+" "+output.getString("job_description"));
-            }else{
-                System.out.println("Record Not Found...");
-            }
-            String query = "delete from job where id = '"+j_id+"'";
+                String query = "delete from job where id = '"+j_id+"'";
             PreparedStatement preparedStmt = connect.prepareStatement(query);
             preparedStmt.executeUpdate();
             System.out.println("row deleted");
+            }else{
+                System.out.println("Record Not Found...");
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
