@@ -14,7 +14,7 @@ public class DeleteCandidate {
    static final String PASS = "amm123!#=/+";
     public static void main(String[] args) {
         try {
-            System.out.println("Enter job id to delete information");
+            System.out.println("Enter candidate id to delete information");
         
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connect = DriverManager.getConnection(DB_URL, USER, PASS);
