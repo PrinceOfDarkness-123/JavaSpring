@@ -1,6 +1,10 @@
 
 package com.mycompany.javadatabase.candidate;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class SelectCandidate {
     static final String DB_URL = "jdbc:mysql://localhost:3306/javabackenddatabase";
