@@ -1,4 +1,3 @@
-
 package com.mycompany.javadatabase.job;
 
 import java.io.DataInputStream;
@@ -26,18 +25,14 @@ public class UpdateJob {
             System.out.println("Enter Job ID:");
             String j_id = kb.readLine();
             //query to display a particular record from table employee where empid(employee id) is equals to eid
-            String sql="Select * from department where id='"+j_id+"'";
+            String sql="Select * from job where id='"+j_id+"'";
             
             ResultSet output = mystatement.executeQuery(sql);
    
          
             if(output.next()){
-                System.out.println(output.getString("id")+"  "+output.getString("dept_id")+" "+output.getString("job_title")+" "+output.getString("job_description"));  
-            }else{
-                System.out.println("Record Not Found...");
-            }
-            
-            System.out.println("Update information according to id"+j_id);
+                System.out.println(output.getString("id")+"  "+output.getString("dept_id")+" "+output.getString("job_title")+" "+output.getString("job_description")); 
+                System.out.println("Update information according to id"+j_id);
             System.out.println("Dept no.:");
             String dept_id = sc.nextLine();
             System.out.println("Job Title:");
@@ -54,7 +49,15 @@ public class UpdateJob {
            int rowsupdated = statement.executeUpdate();
            if (rowsupdated > 0) {
     System.out.println("An existing information was updated successfully!");
-}
+              }else{
+               System.out.println("Failed to update");
+           }
+      }
+            else{
+               System.out.println("Record Not Found...");
+            }
+            
+            
            
             
             
@@ -67,3 +70,4 @@ public class UpdateJob {
         }
     }
 }
+
